@@ -1,0 +1,6 @@
+.cproject
+.mxproject
+.project
+.settings
+STM32F303RBTX_FLASH.ld
+micro_pedal Debug.launch
