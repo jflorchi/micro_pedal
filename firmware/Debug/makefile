@@ -75,8 +75,8 @@ all: main-build
 main-build: micro_pedal.elf secondary-outputs
 
 # Tool invocations
-micro_pedal.elf micro_pedal.map: $(OBJS) $(USER_OBJS) /home/jflorchi/STM32CubeIDE/workspace/micro_pedal/STM32F303RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "micro_pedal.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/jflorchi/STM32CubeIDE/workspace/micro_pedal/STM32F303RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="micro_pedal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+micro_pedal.elf micro_pedal.map: $(OBJS) $(USER_OBJS) /home/jflorchi/STM32CubeIDE/workspace/micro_pedal/firmware/STM32F303RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "micro_pedal.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/jflorchi/STM32CubeIDE/workspace/micro_pedal/firmware/STM32F303RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="micro_pedal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
